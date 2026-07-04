@@ -1,0 +1,335 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Projekt | openClimbingMap</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
+    <meta
+      name="description"
+      content="Projektseite zur openClimbingMap, einer interaktiven Webanwendung für Klettergebiete in der Schweiz"
+    />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript
+      ><link rel="stylesheet" href="assets/css/noscript.css"
+    /></noscript>
+    <style>
+      .project-detail {
+        max-width: 1000px;
+        margin: 0 auto;
+      }
+      .project-hub {
+        display: grid;
+        grid-template-columns: minmax(0, 1.1fr) minmax(18rem, 0.9fr);
+        gap: 2rem;
+        align-items: center;
+        padding: 2rem;
+        border: solid 1px #eeeeee;
+        border-radius: 0.5rem;
+        box-shadow: 0 1rem 2.5rem rgba(33, 41, 49, 0.08);
+        transition:
+          transform 0.2s ease,
+          box-shadow 0.2s ease;
+      }
+      .project-hub:hover {
+        transform: translateY(-0.2rem) scale(1.005);
+        box-shadow: 0 1.25rem 3rem rgba(33, 41, 49, 0.14);
+      }
+      .project-preview {
+        position: relative;
+        overflow: hidden;
+        border-radius: 0.5rem;
+        background: #1e252d;
+      }
+      .project-preview img {
+        display: block;
+        width: 100%;
+        min-height: 18rem;
+        object-fit: cover;
+      }
+      .demo-overlay {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        border: 0;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.92);
+        box-shadow: 0 0.75rem 2rem rgba(0, 0, 0, 0.22);
+        color: #212931 !important;
+      }
+      .project-content p {
+        text-align: left;
+      }
+      .project-detail h3 {
+        margin-top: 1.2rem;
+      }
+      .project-detail ul {
+        padding-left: 1.2rem;
+      }
+      .project-links {
+        margin-bottom: 0;
+      }
+      .project-foldouts {
+        margin-top: 2rem;
+      }
+      .project-foldouts details {
+        border-top: solid 1px #eeeeee;
+        padding: 1rem 0;
+      }
+      .project-foldouts summary {
+        cursor: pointer;
+        font-family: "Source Sans Pro", Helvetica, sans-serif;
+        font-weight: 900;
+        letter-spacing: 0.075em;
+        text-transform: uppercase;
+      }
+      .architecture-diagram {
+        margin: 1rem 0 0 0;
+      }
+      .architecture-diagram img {
+        display: block;
+        width: 100%;
+        height: auto;
+        border: solid 1px #eeeeee;
+        border-radius: 0.5rem;
+      }
+      .project-stack {
+        margin: 1rem 0 0 0;
+      }
+      .project-stack div {
+        display: grid;
+        grid-template-columns: 8rem minmax(0, 1fr);
+        gap: 1rem;
+        padding: 0.35rem 0;
+        border-top: solid 1px rgba(220, 220, 220, 0.35);
+      }
+      .project-stack div:first-child {
+        border-top: 0;
+      }
+      .project-stack dt {
+        font-family: "Source Sans Pro", Helvetica, sans-serif;
+        font-weight: 900;
+        text-transform: uppercase;
+      }
+      .project-stack dd {
+        margin: 0;
+      }
+      @media screen and (max-width: 980px) {
+        .project-hub {
+          grid-template-columns: 1fr;
+        }
+      }
+      @media screen and (max-width: 736px) {
+        .project-hub {
+          padding: 1.25rem;
+        }
+        .project-preview img {
+          min-height: 14rem;
+        }
+        .project-stack div {
+          grid-template-columns: 1fr;
+          gap: 0;
+        }
+      }
+      @media (prefers-color-scheme: dark) {
+        .project-hub {
+          background: #1e252d;
+          border-color: rgba(255, 255, 255, 0.18);
+          color: #ffffff;
+        }
+        .project-hub h3,
+        .project-hub strong,
+        .project-foldouts summary,
+        .project-stack dt {
+          color: #ffffff;
+        }
+        .project-foldouts details,
+        .architecture-diagram img {
+          border-color: rgba(255, 255, 255, 0.18);
+        }
+        .project-stack div {
+          border-top-color: rgba(255, 255, 255, 0.1);
+        }
+      }
+    </style>
+  </head>
+  <body class="is-preload">
+    <div id="wrapper">
+      <header id="header">
+        <a href="index.html" class="logo">Projekt</a>
+      </header>
+
+      <nav id="nav">
+        <ul class="links">
+          <li><a href="index.html">Start</a></li>
+          <li><a href="generic.html">Über mich</a></li>
+        </ul>
+        <ul class="icons">
+          <li>
+            <a
+              href="https://github.com/gianschneider"
+              class="icon brands fa-github"
+              ><span class="label">GitHub</span></a
+            >
+          </li>
+          <li>
+            <a
+              href="https://www.linkedin.com/in/gian-schneider/"
+              class="icon brands fa-linkedin"
+              ><span class="label">LinkedIn</span></a
+            >
+          </li>
+        </ul>
+      </nav>
+
+      <div id="main">
+        <section class="post">
+          <header class="major">
+            <span class="date">Projekt · Web GIS</span>
+            <h1>openClimbingMap</h1>
+            <p>
+              Open-source interactive web application for discovering and
+              managing climbing areas in Switzerland using geospatial data.
+            </p>
+          </header>
+
+          <div class="project-detail">
+            <article class="project-hub">
+              <div class="project-preview">
+                <img
+                  src="/assets/openclimbing-preview.png"
+                  alt="Vorschau der openClimbingMap Webkarte"
+                />
+                <a
+                  href="https://gianschneider.github.io/openClimbingMap/"
+                  class="button small demo-overlay icon solid fa-play"
+                  target="_blank"
+                  rel="noopener"
+                  >Open Demo</a
+                >
+              </div>
+
+              <div class="project-content">
+                <h3>Projektübersicht</h3>
+                <p>
+                  openClimbingMap bündelt Kartenansicht, Filterung und
+                  Standortinformationen in einem schlanken Projekt-Hub. Die
+                  vollständige Anwendung und der Code sind extern verlinkt.
+                </p>
+
+                <h3>Key Features</h3>
+                <ul>
+                  <li>Interactive map of climbing areas</li>
+                  <li>
+                    Filtering by difficulty, number of routes, elevation,
+                    accessibility
+                  </li>
+                  <li>Add new climbing areas with coordinates</li>
+                  <li>Weather integration per location</li>
+                  <li>
+                    Layer support (nature protection zones, restricted areas)
+                  </li>
+                </ul>
+
+                <ul class="actions project-links">
+                  <li>
+                    <a
+                      href="https://gianschneider.github.io/openClimbingMap/"
+                      class="button primary icon solid fa-external-link-alt"
+                      target="_blank"
+                      rel="noopener"
+                      >Live Demo</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="https://github.com/gianschneider/openClimbingMap"
+                      class="button icon brands fa-github"
+                      target="_blank"
+                      rel="noopener"
+                      >View Source</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </article>
+
+            <div class="project-foldouts">
+              <details>
+                <summary>System Architecture</summary>
+                <figure class="architecture-diagram">
+                  <img
+                    src="/assets/Flussdiagramm.png"
+                    alt="Systemarchitektur von openClimbingMap"
+                    loading="lazy"
+                  />
+                </figure>
+              </details>
+
+              <details>
+                <summary>How it works</summary>
+                <dl class="project-stack">
+                  <div>
+                    <dt>Frontend</dt>
+                    <dd>React + Leaflet</dd>
+                  </div>
+                  <div>
+                    <dt>Backend</dt>
+                    <dd>FastAPI + PostGIS + GeoServer</dd>
+                  </div>
+                  <div>
+                    <dt>Routing</dt>
+                    <dd>pgRouting</dd>
+                  </div>
+                  <div>
+                    <dt>Data sources</dt>
+                    <dd>OpenStreetMap, Weather API</dd>
+                  </div>
+                </dl>
+              </details>
+            </div>
+
+            <p>
+              <a href="index.html" class="button">Zurück zur Startseite</a>
+            </p>
+          </div>
+        </section>
+      </div>
+
+      <footer id="footer">
+        <section class="split contact">
+          <section class="alt">
+            <h3>Standort</h3>
+            <p>Basel / Schweiz</p>
+          </section>
+          <section>
+            <h3>E-Mail</h3>
+            <p>
+              <a href="mailto:gianschneider12@bluewin.ch"
+                >gianschneider12@bluewin.ch</a
+              >
+            </p>
+          </section>
+        </section>
+      </footer>
+
+      <div id="copyright">
+        <ul>
+          <li>&copy; 2026 Gian Schneider</li>
+          <li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
