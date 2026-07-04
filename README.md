@@ -4,24 +4,7 @@ Dieses Repository enthält die persönliche Portfolio-Website von Gian Schneider
 
 ## Zweck
 
-Die Website präsentiert kurz Projekte aus dem Geomatik-Studium an der FHNW und zeigt grundlegende Informationen zu Gian Schneider, seinen Schwerpunkten und seinen Kontakten.
-
-## Inhalt
-
-- Startseite mit kurzer Vorstellung und Projektübersicht
-- Unterseite „Über mich“
-- Unterseite „Projekte“ mit Platzhaltern für Bilder und Videos
-- Statische Dateien für HTML, CSS und JavaScript
-
-## Vorschau lokal
-
-Die Website kann lokal über einen einfachen Webserver geöffnet werden:
-
-```bash
-python3 -m http.server 8000
-```
-
-Danach unter http://127.0.0.1:8000/ aufrufen.
+Die Website präsentiert kurz Projekte aus dem Geomatik-Studium an der FHNW und zeigt grundlegende berufliche Informationen zu Gian Schneider.
 
 ## GitHub Pages
 
