@@ -51,6 +51,32 @@
       .project-detail ul {
         padding-left: 1.2rem;
       }
+      .project-back-wrap {
+        margin-top: 2rem;
+      }
+      .project-back {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 2.25rem;
+        height: 2.25rem;
+        border: solid 1px #eeeeee;
+        border-radius: 50%;
+        color: #717981 !important;
+        font-family: "Source Sans Pro", Helvetica, sans-serif;
+        font-size: 1.1rem;
+        line-height: 1;
+        text-decoration: none;
+        transition:
+          border-color 0.2s ease,
+          color 0.2s ease,
+          transform 0.2s ease;
+      }
+      .project-back:hover {
+        border-color: #18bfef;
+        color: #18bfef !important;
+        transform: translateX(-0.15rem);
+      }
     </style>
   </head>
   <body class="is-preload">
@@ -218,8 +244,13 @@
               </li>
             </ul>
 
-            <p>
-              <a href="index.html" class="button">Zurück zur Startseite</a>
+            <p class="project-back-wrap">
+              <a
+                href="index.html#header"
+                class="project-back"
+                aria-label="Zurück zur Startseite"
+                >&larr;</a
+              >
             </p>
           </div>
         </section>
