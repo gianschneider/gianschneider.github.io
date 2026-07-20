@@ -34,6 +34,19 @@
       .youtube-facade {
         margin-bottom: 3rem;
       }
+      .trimble-model {
+        margin: 0 0 3rem 0;
+      }
+      .trimble-model p {
+        text-align: left;
+      }
+      .trimble-actions {
+        margin-bottom: 1.5rem;
+      }
+      .trimble-actions .button {
+        letter-spacing: 0;
+        text-transform: none;
+      }
       .project-video iframe {
         position: absolute;
         inset: 0;
@@ -128,7 +141,6 @@
                   <i class="fas fa-play" style="color: white; font-size: 20px; margin-left: 4px;"></i>
                 </div>
               </div>
-            </div>
             <script>
               document.addEventListener("DOMContentLoaded", function() {
                 document.querySelectorAll('.youtube-facade').forEach(function(facade) {
@@ -139,46 +151,41 @@
                 });
               });
             </script>
-            <h3>Aufgabenstellung</h3>
+
+            <section class="trimble-model">
+              <h3>3D-Modell</h3>
+              <p>
+                Das BIM-Modell kann in Trimble Connect interaktiv betrachtet
+                werden. Das Modell ist als öffentliche, schreibgeschützte
+                Ansicht verlinkt.
+              </p>
+              <ul class="actions trimble-actions">
+                <li>
+                  <a
+                    href="https://app21.connect.trimble.com/tc/api/2.0/s/AnlvL9qgNvdt49o5_FABvG9kpoTd-07hWgCEBULL632NxHnyxc1OiM7ff51LyTaP"
+                    class="button small icon solid fa-external-link-alt"
+                    target="_blank"
+                    rel="noopener"
+                    >Modell öffnen</a
+                  >
+                </li>
+              </ul>
+            </section>
+
+            <h3>Datenerfassung mit:</h3>
             <ul>
-              <li>
-                Erstellung eines präzisen, georeferenzierten
-                As-Is-3D-BIM-Modells (LOD 300, LOI 100) im IFC-Format
-              </li>
-              <li>
-                Grundlage für genaue Gewichtsabschätzung und Visualisierungen
-              </li>
-              <li>
-                Prüfung der Machbarkeit einer nachhaltigen Versetzung der
-                bestehenden Brücke
-              </li>
-              <li>
-                Ergänzende Arbeiten: DGM, Geometriemodell der Autobahnbrücke und
-                Kostenanalyse
-              </li>
+              <li>Terrestrisches Laserscanning (X7, X9)</li>
+              <li>Totalstation (SX12)</li>
+              <li>Mobile Mapping (NavVis VLX 3.0)</li>
             </ul>
-            <h3>Methodik</h3>
+
+            <h3>Auswertung und Modellierung mit:</h3>
             <ul>
-              <li>Terrestrisches Laserscanning mit Trimble X7/X9</li>
-              <li>
-                Totalstationen Trimble SX12 zur Georeferenzierung und
-                Fixpunktbestimmung
-              </li>
-              <li>Mobiles Kartierungssystem NavVis VLX 3</li>
-              <li>
-                Registrierung und Bereinigung in Trimble RealWorks und Trimble
-                Business Center
-              </li>
-              <li>Parametrische Modellierung in Rhino 8 und Grasshopper</li>
-            </ul>
-            <h3>Resultate</h3>
-            <ul>
-              <li>Voll parametrisiertes IFC-Modell der Fachwerkkonstruktion</li>
-              <li>
-                96,3 % der Bauteile weisen weniger als 3 cm Abweichung zur
-                Referenzpunktwolke auf
-              </li>
-              <li>Gesamtgewicht der Brücke wurde auf 97 Tonnen berechnet</li>
+              <li>Trimble RealWorks</li>
+              <li>Trimble Business Center</li>
+              <li>Cyclone 3DR</li>
+              <li>Rhino 8 (mit Grasshopper)</li>
+              <li>Trimble Connect</li>
             </ul>
             <p class="project-back-wrap">
               <a
