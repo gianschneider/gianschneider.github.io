@@ -46,6 +46,94 @@ blockquote, q {
 		content: none;
 	}
 
+/* Portfolio additions */
+
+	@media screen and (min-width: 737px) {
+
+		#main > .posts.projects-grid.projects-grid-odd:after {
+			content: '';
+			display: block;
+			width: 50%;
+			border-top: solid 2px #eeeeee;
+			box-sizing: border-box;
+		}
+
+	}
+
+	.youtube-facade {
+		position: relative;
+		height: 0;
+		max-width: 100%;
+		margin-bottom: 0.75rem;
+		padding-bottom: 56.25%;
+		overflow: hidden;
+		border-radius: 4px;
+		background-color: #111111;
+		cursor: pointer;
+	}
+
+	.youtube-facade.youtube-facade-light {
+		background-color: #ffffff;
+	}
+
+	.youtube-facade.youtube-facade-spaced {
+		margin-top: 2em;
+	}
+
+	.youtube-facade img,
+	.youtube-facade iframe {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		border: 0;
+	}
+
+	.youtube-facade img {
+		object-fit: cover;
+		opacity: 0.8;
+		transition: opacity 0.3s ease;
+	}
+
+	.youtube-facade:hover img {
+		opacity: 1;
+	}
+
+	.youtube-facade-play {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 60px;
+		height: 60px;
+		border: solid 2px rgba(255, 255, 255, 0.8);
+		border-radius: 50%;
+		background: rgba(0, 0, 0, 0.5);
+		pointer-events: none;
+		transform: translate(-50%, -50%);
+	}
+
+	.youtube-facade-play i {
+		margin-left: 4px;
+		color: #ffffff;
+		font-size: 20px;
+	}
+
+	.video-caption {
+		margin: 0 0 3rem 0;
+		color: #717981;
+		font-size: 0.9rem;
+		font-style: italic;
+		text-align: center;
+	}
+
+	.video-column-spaced {
+		margin-top: 2em;
+	}
+
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
