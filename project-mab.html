@@ -28,6 +28,19 @@
         border-radius: 0.75rem;
         overflow: hidden;
       }
+      .trimble-model {
+        margin: 0 0 3rem 0;
+      }
+      .trimble-model p {
+        text-align: left;
+      }
+      .trimble-actions {
+        margin-bottom: 1.5rem;
+      }
+      .trimble-actions .button {
+        letter-spacing: 0;
+        text-transform: none;
+      }
       .project-video iframe {
         position: absolute;
         inset: 0;
@@ -110,73 +123,54 @@
           <header class="major">
             <h1>Scan to BIM für Musik-Akademie Basel (MAB)</h1>
             <p>
-              Erstellung eines hochgenauen BIM-Modells der MAB-Bibliothek und
-              eines Geländemodells als Grundlage für den Campus-Planungsprozess
-              und die spätere Visualisierung.
+              Erstellung eines präzisen, georeferenzierten As-Is-BIM-Modells im
+              IFC-Format der MAB-Bibliothek und eines Geländemodells als
+              Grundlage für den Campus-Planungsprozess und die spätere
+              Visualisierung.
             </p>
           </header>
 
           <div class="project-detail">
-            <h3>Aufgabenstellung</h3>
+            <section class="trimble-model">
+              <h3>3D-Modell</h3>
+              <p>
+                Das BIM-Modell kann in Trimble Connect interaktiv betrachtet
+                werden. Das Modell ist als öffentliche, schreibgeschützte
+                Ansicht verlinkt.
+              </p>
+              <ul class="actions trimble-actions">
+                <li>
+                  <a
+                    href="https://app21.connect.trimble.com/tc/api/2.0/s/scixY9S12EuIyXP6oE1J6M-ILzHPs2n6xonbQ9iojmvO0zOYOW2UtAOGv17Rd2_b"
+                    class="button small icon solid fa-external-link-alt"
+                    target="_blank"
+                    rel="noopener"
+                    >Modell öffnen</a
+                  >
+                </li>
+              </ul>
+            </section>
+
+            <h3>Datenerfassung mit:</h3>
             <ul>
-              <li>
-                Erstellung eines BIM-Modells der MAB-Bibliothek mit
-                geometrischen Details im LOD 300
-              </li>
-              <li>
-                Erstellung eines Geländemodells der umliegenden Parzelle mit
-                einer Genauigkeit von 5 cm
-              </li>
-              <li>
-                Durchführung einer As-built-Prüfung durch Vergleich von
-                Plandarstellung, Punktwolke und BIM-Modell
-              </li>
-              <li>
-                Erstellung interaktiver Visualisierungen für die Präsentation
-                vor Ort
-              </li>
+              <li>Totalstation (SX12)</li>
+              <li>Terrestrisches Laserscanning (X7, X9)</li>
+              <li>Mobile Mapping (NavVis VLX)</li>
+              <li>Drohne (DJI)</li>
+              <li>Controller (T10 Tablet, TSC 7)</li>
             </ul>
 
-            <h3>Methodik</h3>
+            <h3>Auswertung und Modellierung mit:</h3>
             <ul>
-              <li>
-                Vermessung mit terrestrischem Laserscanning (Trimble X7, X9) und
-                mobilem Kartierungssystem NavVis VLX
-              </li>
-              <li>
-                Georeferenzierung über einen äusseren und inneren Polygonzug mit
-                Trimble SX12
-              </li>
-              <li>
-                Ergänzende Drohnenflüge für visuelle Referenzaufnahmen und
-                Darstellung der Umgebung
-              </li>
-              <li>
-                Modellierung in Autodesk Revit mit zentralem Projektfile für die
-                parallele Bearbeitung der Stockwerke
-              </li>
-              <li>
-                Modellprüfung und Clash Detection mit Solibri sowie visueller
-                Vergleich mit der Punktwolke in Cyclone 3DR
-              </li>
-            </ul>
-
-            <h3>Software &amp; Instrumente</h3>
-            <ul>
+              <li>Trimble Perspective</li>
               <li>Trimble RealWorks</li>
-              <li>Autodesk Revit</li>
               <li>Cyclone 3DR</li>
+              <li>Autodesk Revit</li>
+              <li>AutoCAD</li>
+              <li>Autodesk Recap v.24.0</li>
+              <li>NavVis IVION</li>
               <li>Solibri</li>
-              <li>Microsoft HoloLens und Trimble Connect AR</li>
-            </ul>
-
-            <h3>Resultate &amp; Deliverables</h3>
-            <ul>
-              <li>Georeferenzierte Punktwolken im .e57-Format</li>
-              <li>3D-Mesh der Umgebung im .obj-Format</li>
-              <li>Vollständiges BIM-Modell im .rvt-Format</li>
-              <li>Registrierungsprotokolle und Drohnenfotos</li>
-              <li>Gesamtkosten des Projekts: 22'620 CHF</li>
+              <li>QGIS</li>
             </ul>
 
             <p class="project-back-wrap">
