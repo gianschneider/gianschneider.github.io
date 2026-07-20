@@ -109,6 +109,9 @@
         border-top: solid 1px #eeeeee;
         padding: 1rem 0;
       }
+      .project-foldouts details + details {
+        border-top: 0;
+      }
       .project-foldouts summary {
         cursor: pointer;
         font-family: "Source Sans Pro", Helvetica, sans-serif;
@@ -125,13 +128,6 @@
         height: auto;
         border: solid 1px #eeeeee;
         border-radius: 0.5rem;
-      }
-      .architecture-diagram figcaption {
-        color: #717981;
-        font-size: 0.9rem;
-        font-style: italic;
-        margin-top: 0.75rem;
-        text-align: center;
       }
       .project-stack {
         margin: 1rem 0 0 0;
@@ -323,15 +319,13 @@
             <div class="project-foldouts">
               <details open>
                 <summary>Systemarchitektur</summary>
+                <h3>Systemarchitektur</h3>
                 <figure class="architecture-diagram">
                   <img
                     src="Projekte/openClimbingMap/architektur.jpeg"
                     alt="Systemarchitektur von openClimbingMap"
                     loading="lazy"
                   />
-                  <figcaption>
-                    Systemarchitektur der openClimbingMap
-                  </figcaption>
                 </figure>
               </details>
 
