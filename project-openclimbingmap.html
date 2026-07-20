@@ -56,9 +56,15 @@
         transform: translate(-50%, -50%);
         border: 0;
         border-radius: 999px;
-        background: rgba(255, 255, 255, 0.92);
+        background: rgba(255, 255, 255, 0.94);
         box-shadow: 0 0.75rem 2rem rgba(0, 0, 0, 0.22);
         color: #212931 !important;
+        letter-spacing: 0;
+        text-transform: none;
+      }
+      .demo-overlay:hover {
+        background: #18bfef;
+        color: #ffffff !important;
       }
       .project-content p {
         text-align: left;
@@ -83,6 +89,8 @@
         background: #18bfef;
         box-shadow: none;
         color: #ffffff !important;
+        letter-spacing: 0;
+        text-transform: none;
         transition:
           background-color 0.2s ease,
           box-shadow 0.2s ease,
@@ -117,6 +125,13 @@
         height: auto;
         border: solid 1px #eeeeee;
         border-radius: 0.5rem;
+      }
+      .architecture-diagram figcaption {
+        color: #717981;
+        font-size: 0.9rem;
+        font-style: italic;
+        margin-top: 0.75rem;
+        text-align: center;
       }
       .project-stack {
         margin: 1rem 0 0 0;
@@ -246,7 +261,8 @@
             <h1>openClimbingMap</h1>
             <p>
               Open-Source-Webanwendung zum Entdecken und Verwalten von
-              Klettergebieten in der Schweiz auf Basis von Geodaten.
+              Klettergebieten in der Schweiz auf Basis von Geodaten. Die
+              Anwendung verfügt über ein Front- und Backend.
             </p>
           </header>
 
@@ -290,31 +306,33 @@
                   </li>
                 </ul>
 
-                  </li>
+                <ul class="actions project-links">
+                  <li>
                     <a
                       href="https://github.com/gianschneider/openClimbingMap"
-                      class="button icon brands fa-github"
+                      class="button small icon brands fa-github"
                       target="_blank"
                       rel="noopener"
-                      style="background-color: #ffffff; color: #ffffff; border-color: #ffffff;"
-                        onmouseover="this.style.backgroundColor='#ffffff'; this.style.borderColor='#ffffff';"
-
-  onmouseout="this.style.backgroundColor='#ffffff'; this.style.borderColor='#ffffff';"
                       >Quellcode</a
                     >
+                  </li>
                 </ul>
               </div>
             </article>
 
             <div class="project-foldouts">
-              <details>
+              <details open>
                 <summary>Systemarchitektur</summary>
+                <h3>Systemarchitektur</h3>
                 <figure class="architecture-diagram">
                   <img
-                    src="assets/Flussdiagramm.png"
+                    src="Projekte/openClimbingMap/architektur.jpeg"
                     alt="Systemarchitektur von openClimbingMap"
                     loading="lazy"
                   />
+                  <figcaption>
+                    Systemarchitektur der openClimbingMap
+                  </figcaption>
                 </figure>
               </details>
 
