@@ -79,6 +79,21 @@
       .actions.project-links li {
         padding-left: 0;
       }
+      .actions.project-links .button {
+        background: #18bfef;
+        box-shadow: none;
+        color: #ffffff !important;
+        transition:
+          background-color 0.2s ease,
+          box-shadow 0.2s ease,
+          transform 0.2s ease;
+      }
+      .actions.project-links .button:hover {
+        background: #149dca;
+        box-shadow: 0 0.75rem 1.5rem rgba(24, 191, 239, 0.28);
+        color: #ffffff !important;
+        transform: translateY(-0.12rem);
+      }
       .project-foldouts {
         margin-top: 2rem;
       }
@@ -202,7 +217,6 @@
       <div id="main">
         <section class="post">
           <header class="major">
-            <span class="date">Projekt · Web GIS</span>
             <h1>openClimbingMap</h1>
             <p>
               Open-Source-Webanwendung zum Entdecken und Verwalten von
