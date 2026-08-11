@@ -137,21 +137,30 @@
       }
       .sketchfab-grid {
         display: flex;
-        gap: 0.75rem;
+        align-items: stretch;
+        gap: 1rem;
         overflow-x: auto;
-        padding: 0.15rem 0.15rem 0.75rem;
-        scroll-padding-inline: 0.15rem;
+        padding: 0.25rem 0.25rem 1.25rem;
+        scroll-padding-inline: 0.25rem;
         scroll-snap-type: x proximity;
         scrollbar-color: #18bfef #eeeeee;
       }
       .sketchfab-viewer {
         flex: 0 0 12rem;
+        min-width: 0;
         scroll-snap-align: start;
       }
       .sketchfab-facade {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        box-sizing: border-box;
         width: 100%;
-        min-height: 4.5rem;
+        max-width: 100%;
+        min-height: 5.5rem;
         height: auto;
+        margin: 0;
+        overflow: hidden;
         padding: 0.8rem 0.9rem;
         border-radius: 0.5rem;
         line-height: 1.25;
@@ -336,11 +345,11 @@
             <section class="sketchfab-models" aria-labelledby="sketchfab-title">
               <h3 id="sketchfab-title">Interaktive 3D-Modelle</h3>
               <p>
-                Ausgewählte Ergebnisse der Evaluation lassen sich direkt im
-                Browser dreidimensional erkunden.
+                Ausgewählte Ergebnisse von <em>3D Scanner App</em> lassen sich
+                direkt im Browser dreidimensional erkunden.
               </p>
               <details class="sketchfab-chapter">
-                <summary>17 Modelle anzeigen und auswählen</summary>
+                <summary>Modelle anzeigen und auswählen</summary>
                 <div class="sketchfab-gallery">
                   <p class="sketchfab-picker-label">Modell auswählen</p>
                   <div
