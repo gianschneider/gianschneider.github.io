@@ -15,23 +15,59 @@
     return iframe;
   }
 
-  document.addEventListener("DOMContentLoaded", function () {
-    var facades = document.querySelectorAll(".sketchfab-facade");
+  function createChoiceContent(choice, index, modelName) {
+    var number = document.createElement("span");
+    var name = document.createElement("span");
 
-    facades.forEach(function (facade) {
-      facade.addEventListener("click", function () {
-        var modelId = facade.getAttribute("data-model-id");
-        var modelName = facade.getAttribute("data-model-name") || "Sketchfab";
+    number.className = "sketchfab-choice-index";
+    number.textContent = "Modell " + String(index + 1).padStart(2, "0");
+    name.className = "sketchfab-choice-name";
+    name.textContent = modelName;
 
-        if (!modelId || !facade.parentNode) {
+    choice.textContent = "";
+    choice.appendChild(number);
+    choice.appendChild(name);
+  }
+
+  function initGallery(gallery) {
+    var stage = gallery.querySelector(".sketchfab-stage");
+    var choices = gallery.querySelectorAll(".sketchfab-facade");
+
+    if (!stage) {
+      return;
+    }
+
+    choices.forEach(function (choice, index) {
+      var modelName = choice.getAttribute("data-model-name") || "Sketchfab";
+
+      choice.setAttribute("aria-controls", stage.id);
+      choice.setAttribute("aria-pressed", "false");
+      createChoiceContent(choice, index, modelName);
+
+      choice.addEventListener("click", function () {
+        var modelId = choice.getAttribute("data-model-id");
+
+        if (!modelId) {
           return;
         }
 
-        facade.parentNode.replaceChild(
-          createIframe(modelId, modelName),
-          facade,
-        );
+        choices.forEach(function (item) {
+          item.setAttribute("aria-pressed", String(item === choice));
+        });
+
+        stage.textContent = "";
+        stage.appendChild(createIframe(modelId, modelName));
       });
     });
-  });
+  }
+
+  function initSketchfabGalleries() {
+    document.querySelectorAll(".sketchfab-gallery").forEach(initGallery);
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initSketchfabGalleries);
+  } else {
+    initSketchfabGalleries();
+  }
 })();

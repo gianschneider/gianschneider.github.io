@@ -46,70 +46,137 @@
       .sketchfab-models > p {
         text-align: left;
       }
-      .sketchfab-grid {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 1.25rem;
+      .sketchfab-chapter {
+        overflow: hidden;
         margin-top: 1.5rem;
+        border: solid 1px #eeeeee;
+        border-radius: 0.75rem;
+        background: #ffffff;
       }
-      .sketchfab-viewer {
+      .sketchfab-chapter summary {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        padding: 1.1rem 1.25rem;
+        color: #212931;
+        cursor: pointer;
+        font-family: "Source Sans Pro", Helvetica, sans-serif;
+        font-weight: 700;
+        list-style: none;
+      }
+      .sketchfab-chapter summary::-webkit-details-marker {
+        display: none;
+      }
+      .sketchfab-chapter summary::after {
+        content: "\f078";
+        flex: 0 0 auto;
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        color: #18bfef;
+        transition: transform 0.2s ease;
+      }
+      .sketchfab-chapter[open] summary::after {
+        transform: rotate(180deg);
+      }
+      .sketchfab-chapter summary:hover,
+      .sketchfab-chapter summary:focus-visible {
+        color: #18bfef;
+      }
+      .sketchfab-chapter summary:focus-visible {
+        outline: 3px solid #18bfef;
+        outline-offset: -3px;
+      }
+      .sketchfab-gallery {
+        padding: 1.25rem;
+        border-top: solid 1px #eeeeee;
+      }
+      .sketchfab-stage {
+        display: flex;
+        align-items: center;
+        justify-content: center;
         aspect-ratio: 16 / 9;
         overflow: hidden;
+        margin-top: 0.5rem;
         border-radius: 0.75rem;
-        background: #1d242a;
+        color: #ffffff;
+        background:
+          radial-gradient(circle at 50% 20%, rgba(24, 191, 239, 0.24), transparent 42%),
+          linear-gradient(135deg, #252e35, #161b1f);
         box-shadow: 0 0.5rem 1.5rem rgba(30, 37, 43, 0.12);
       }
-      .sketchfab-viewer iframe {
+      .sketchfab-stage iframe {
         display: block;
         width: 100%;
         height: 100%;
         border: 0;
       }
-      .sketchfab-facade {
+      .sketchfab-placeholder {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         gap: 0.75rem;
-        width: 100%;
-        height: 100%;
-        margin: 0;
         padding: 1.5rem;
-        border: 0;
-        border-radius: 0;
-        color: #ffffff !important;
-        background:
-          radial-gradient(circle at 50% 20%, rgba(24, 191, 239, 0.24), transparent 42%),
-          linear-gradient(135deg, #252e35, #161b1f);
-        box-shadow: none;
-        cursor: pointer;
+        text-align: center;
         font-family: "Source Sans Pro", Helvetica, sans-serif;
         letter-spacing: 0.04em;
-        text-transform: none;
       }
-      .sketchfab-facade::before {
+      .sketchfab-placeholder::before {
         content: "\f1b2";
         font-family: "Font Awesome 5 Free";
         font-size: 2.5rem;
         font-weight: 900;
         line-height: 1;
         color: #18bfef;
-        transition: transform 0.2s ease;
       }
-      .sketchfab-facade:hover,
-      .sketchfab-facade:focus-visible {
+      .sketchfab-picker-label {
+        margin: 1.25rem 0 0.65rem;
+        font-size: 0.9rem;
+        text-align: left;
+      }
+      .sketchfab-grid {
+        display: flex;
+        gap: 0.75rem;
+        overflow-x: auto;
+        padding: 0.15rem 0.15rem 0.75rem;
+        scroll-padding-inline: 0.15rem;
+        scroll-snap-type: x proximity;
+        scrollbar-color: #18bfef #eeeeee;
+      }
+      .sketchfab-viewer {
+        flex: 0 0 12rem;
+        scroll-snap-align: start;
+      }
+      .sketchfab-facade {
+        width: 100%;
+        min-height: 4.5rem;
+        height: auto;
+        padding: 0.8rem 0.9rem;
+        border-radius: 0.5rem;
+        line-height: 1.25;
+        text-align: left;
+        text-transform: none;
+        white-space: normal;
+      }
+      .sketchfab-choice-index,
+      .sketchfab-choice-name {
+        display: block;
+      }
+      .sketchfab-choice-index {
+        margin-bottom: 0.25rem;
+        color: #18bfef;
+        font-size: 0.7rem;
+        letter-spacing: 0.12em;
+      }
+      .sketchfab-choice-name {
+        overflow-wrap: anywhere;
+        font-weight: 700;
+      }
+      .sketchfab-facade[aria-pressed="true"] {
+        background: #212931;
+        box-shadow: inset 0 0 0 2px #212931;
         color: #ffffff !important;
-        background:
-          radial-gradient(circle at 50% 20%, rgba(24, 191, 239, 0.34), transparent 44%),
-          linear-gradient(135deg, #2b363e, #181e22);
-      }
-      .sketchfab-facade:hover::before,
-      .sketchfab-facade:focus-visible::before {
-        transform: translateY(-0.2rem) rotate(-4deg);
-      }
-      .sketchfab-facade:focus-visible {
-        outline: 3px solid #18bfef;
-        outline-offset: -3px;
       }
       .project-detail h3 {
         margin-top: 1.2rem;
@@ -144,8 +211,11 @@
         transform: translateX(-0.15rem);
       }
       @media screen and (max-width: 736px) {
-        .sketchfab-grid {
-          grid-template-columns: 1fr;
+        .sketchfab-gallery {
+          padding: 0.9rem;
+        }
+        .sketchfab-viewer {
+          flex-basis: 10rem;
         }
       }
     </style>
@@ -198,6 +268,35 @@
           </header>
 
           <div class="project-detail">
+            <h3>Projektübersicht</h3>
+            <ul>
+              <li>
+                <strong>Titel:</strong> Evaluation von 3D Scanning Apps zur
+                Erfassung von 3D-Modellen und Punktwolken
+              </li>
+              <li>
+                <strong>Zielsetzung:</strong> Evaluation von sieben
+                iOS-basierten Apps für die 3D-Dokumentation von Werkleitungen in
+                offenen Baugräben
+              </li>
+              <li>
+                <strong>Poster:</strong>
+                <a
+                  href="https://www.fhnw.ch/++api++/de/architektur-bau-geomatik/studium/angebot/studiengaenge/bachelor-in-geomatik/bachelorthesen/bachelor-thesis-2025/bth12_gian_schneider_-3d-scanning-apps.pdf/@@inline-file/file"
+                  target="_blank"
+                  rel="noopener"
+                  >Bachelor-Thesis-Poster öffnen</a
+                >
+              </li>
+              <li><strong>Autor:</strong> Gian Schneider</li>
+              <li><strong>Institution:</strong> Institut Geomatik der FHNW</li>
+              <li>
+                <strong>Betreuung:</strong> Prof. Dr. Stephan Nebiker, Jonas
+                Meyer, Marianne Gertsch
+              </li>
+              <li><strong>Datum:</strong> Eingereicht am 20. Juni 2025</li>
+            </ul>
+
             <div class="project-image">
               <img
                 src="Projekte/Bachelorthesis 3D Scanning Apps/PitchBTH2025_12.jpg"
@@ -240,7 +339,14 @@
                 Ausgewählte Ergebnisse der Evaluation lassen sich direkt im
                 Browser dreidimensional erkunden.
               </p>
-              <div class="sketchfab-grid">
+              <details class="sketchfab-chapter">
+                <summary>17 Modelle anzeigen und auswählen</summary>
+                <div class="sketchfab-gallery">
+                  <p class="sketchfab-picker-label">Modell auswählen</p>
+                  <div
+                    class="sketchfab-grid"
+                    aria-label="Verfügbare 3D-Modelle"
+                  >
                 <div class="sketchfab-viewer">
                   <button
                     class="sketchfab-facade"
@@ -429,6 +535,17 @@
                   </button>
                 </div>
               </div>
+                  <div
+                    class="sketchfab-stage"
+                    id="sketchfab-stage"
+                    aria-live="polite"
+                  >
+                    <div class="sketchfab-placeholder">
+                      Oben ein Modell auswählen
+                    </div>
+                  </div>
+                </div>
+              </details>
             </section>
 
             <section class="trimble-model">
@@ -450,35 +567,6 @@
                 </li>
               </ul>
             </section>
-
-            <h3>Projektübersicht</h3>
-            <ul>
-              <li>
-                <strong>Titel:</strong> Evaluation von 3D Scanning Apps zur
-                Erfassung von 3D-Modellen und Punktwolken
-              </li>
-              <li>
-                <strong>Zielsetzung:</strong> Evaluation von sieben
-                iOS-basierten Apps für die 3D-Dokumentation von Werkleitungen in
-                offenen Baugräben
-              </li>
-              <li>
-                <strong>Poster:</strong>
-                <a
-                  href="https://www.fhnw.ch/++api++/de/architektur-bau-geomatik/studium/angebot/studiengaenge/bachelor-in-geomatik/bachelorthesen/bachelor-thesis-2025/bth12_gian_schneider_-3d-scanning-apps.pdf/@@inline-file/file"
-                  target="_blank"
-                  rel="noopener"
-                  >Bachelor-Thesis-Poster öffnen</a
-                >
-              </li>
-              <li><strong>Autor:</strong> Gian Schneider</li>
-              <li><strong>Institution:</strong> Institut Geomatik der FHNW</li>
-              <li>
-                <strong>Betreuung:</strong> Prof. Dr. Stephan Nebiker, Jonas
-                Meyer, Marianne Gertsch
-              </li>
-              <li><strong>Datum:</strong> Eingereicht am 20. Juni 2025</li>
-            </ul>
 
             <p class="project-back-wrap">
               <a
