@@ -40,6 +40,77 @@
         letter-spacing: 0;
         text-transform: none;
       }
+      .sketchfab-models {
+        margin: 3rem 0;
+      }
+      .sketchfab-models > p {
+        text-align: left;
+      }
+      .sketchfab-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1.25rem;
+        margin-top: 1.5rem;
+      }
+      .sketchfab-viewer {
+        aspect-ratio: 16 / 9;
+        overflow: hidden;
+        border-radius: 0.75rem;
+        background: #1d242a;
+        box-shadow: 0 0.5rem 1.5rem rgba(30, 37, 43, 0.12);
+      }
+      .sketchfab-viewer iframe {
+        display: block;
+        width: 100%;
+        height: 100%;
+        border: 0;
+      }
+      .sketchfab-facade {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 0.75rem;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 1.5rem;
+        border: 0;
+        border-radius: 0;
+        color: #ffffff !important;
+        background:
+          radial-gradient(circle at 50% 20%, rgba(24, 191, 239, 0.24), transparent 42%),
+          linear-gradient(135deg, #252e35, #161b1f);
+        box-shadow: none;
+        cursor: pointer;
+        font-family: "Source Sans Pro", Helvetica, sans-serif;
+        letter-spacing: 0.04em;
+        text-transform: none;
+      }
+      .sketchfab-facade::before {
+        content: "\f1b2";
+        font-family: "Font Awesome 5 Free";
+        font-size: 2.5rem;
+        font-weight: 900;
+        line-height: 1;
+        color: #18bfef;
+        transition: transform 0.2s ease;
+      }
+      .sketchfab-facade:hover,
+      .sketchfab-facade:focus-visible {
+        color: #ffffff !important;
+        background:
+          radial-gradient(circle at 50% 20%, rgba(24, 191, 239, 0.34), transparent 44%),
+          linear-gradient(135deg, #2b363e, #181e22);
+      }
+      .sketchfab-facade:hover::before,
+      .sketchfab-facade:focus-visible::before {
+        transform: translateY(-0.2rem) rotate(-4deg);
+      }
+      .sketchfab-facade:focus-visible {
+        outline: 3px solid #18bfef;
+        outline-offset: -3px;
+      }
       .project-detail h3 {
         margin-top: 1.2rem;
       }
@@ -71,6 +142,11 @@
         border-color: #18bfef;
         color: #18bfef !important;
         transform: translateX(-0.15rem);
+      }
+      @media screen and (max-width: 736px) {
+        .sketchfab-grid {
+          grid-template-columns: 1fr;
+        }
       }
     </style>
   </head>
@@ -157,6 +233,36 @@
             <p class="video-caption">
               Workflow zur Erfassung von offenen Gräben mit Smartphone
             </p>
+
+            <section class="sketchfab-models" aria-labelledby="sketchfab-title">
+              <h3 id="sketchfab-title">Interaktive 3D-Modelle</h3>
+              <p>
+                Ausgewählte Ergebnisse der Evaluation lassen sich direkt im
+                Browser dreidimensional erkunden.
+              </p>
+              <div class="sketchfab-grid">
+                <div class="sketchfab-viewer">
+                  <button
+                    class="sketchfab-facade"
+                    type="button"
+                    data-model-id="d7ebe340ec984fb293378a5f9523f204"
+                    aria-label="3D-Modell 1 von Sketchfab laden"
+                  >
+                    3D-Modell laden
+                  </button>
+                </div>
+                <div class="sketchfab-viewer">
+                  <button
+                    class="sketchfab-facade"
+                    type="button"
+                    data-model-id="a80b2e837821488a88d8196072166333"
+                    aria-label="3D-Modell 2 von Sketchfab laden"
+                  >
+                    3D-Modell laden
+                  </button>
+                </div>
+              </div>
+            </section>
 
             <section class="trimble-model">
               <h3>3D-Modell</h3>
@@ -252,5 +358,6 @@
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
     <script src="assets/js/video-facade.js"></script>
+    <script src="assets/js/sketchfab-facade.js"></script>
   </body>
 </html>
